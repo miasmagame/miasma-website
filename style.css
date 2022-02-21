@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://use.typekit.net/ehc8wok.css");
+
+*{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+        /*? font-family: aileron, sans-serif; */
+        line-height: 1;
+        font-size: 16px;
+}
+
+body{
+        height: 100vh;
+        overflow: hidden;
+        background-image: url("assets/background.png");
+        background-size: cover;
+        background-color: #1A1A1A;
+        animation: fadein .3s ease-out forwards;
+        opacity: 0;
+        
+
+}
+@keyframes fadein{
+        from{
+                opacity: 0;
+        }
+        to{
+                opacity: 1;
+        }
+}
+::selection, ::-moz-selection{
+        background: rgba(255, 255, 255, 0.5);
+        
+}
+
+header{
+        height: 10vh;
+        width: 70%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+}
+
+header nav a{
+        margin-left: 1em;
+}
+
+header nav .link{
+        opacity: 70%;
+        transition: opacity .1s ease-out;
+}
+
+header nav .link:hover{
+        opacity: 1;
+}
+
+header .logo{
+        font-weight: 900;
+        font-family: aileron, sans-serif;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-size: cover;
+        color: #fff;
+        background-image: url("assets/bg.png");
+        font-size: 4rem;
+}
+
+main{
+        width: 70%;
+        margin: 0 auto;
+        position: relative;
+        height: 75%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+}
+
+
+
+.watermark{
+        position: absolute;
+        top: 50%; transform: translateY(-50%);
+        right: 0;
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+         -khtml-user-select: none; /* Konqueror HTML */
+           -moz-user-select: none; /* Old versions of Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* Non-prefixed version, currently
+                                      supported by Chrome, Edge, Opera and Firefox */
+        
+        
+}
+main .text h1{
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: #fff;
+        background-image: url("assets/bg2.png");
+        font-size: 6.25rem;
+        font-weight: 900;
+        background-size: 90%;
+        background-position-y: 100%;
+        font-family: aileron, sans-serif;
+        margin-bottom: 30px;
+        animation: textAnim 70s linear infinite .3s;
+        opacity: 1;
+}
+
+
+@keyframes textAnim{
+        0%{
+                background-position-y: 100%;
+        
+        }
+        
+        100%{
+                background-position-y: -100%;
+        }
+}
+
+main .text p {
+        font-size: 1rem;
+        color: #fff;
+        width: 25em;
+        margin-bottom: 50px;
+        line-height: 1.3em;
+        opacity: 70%;
+}
+
+.button{
+        opacity: 70%;
+        padding: .7em 1em;
+        border: 1px solid #fff;
+        color: #fff;
+        text-decoration: none;
+        position: relative;
+        transition: border-color .3s ease-out, opacity .1s ease-out, padding .1s ease-out;
+        
+}
+
+.button::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: url(assets/bg2.png);
+        background-position-y: 0%;
+        z-index: -1;
+        animation: textAnim 8s linear infinite;
+        opacity: 0;
+        transition: opacity .3s ease-out;
+}
+
+.button:hover::after{
+        opacity: 50%;
+}
+
+.button:hover{
+        border-color: rgb(87, 87, 87);
+        opacity: 1;
+        padding: .7em 1.5em;
+}
+
+@keyframes backgroundAnim{
+        0%{
+                background-position-x: 100%;
+        }
+        50%{
+                background-position-y: -50%;
+        }
+        100%{
+                background-position-y: 100%;
+        }
+}
+
+
+a{
+        color: #fff;
+        text-decoration: none;
+}
+
+
+@media screen and (max-width: 1000px){
+        *{
+                font-size: 14px;
+        }
+}
+
+@media screen and (max-width: 750px){
+        *{
+                font-size: 12px;
+        }
+        main{
+                justify-content: center;
+                text-align: center;
+                align-items: center;
+                
+        }
+        main .text p{
+                margin: 0 auto;
+                margin-bottom: 35px;
+        }
+        main .text h1{
+                font-size: 5rem;
+        }
+}
+
+@media screen and (max-width: 560px){
+        .button{ display: none;}
+        main .text h1{
+                font-size: 4rem;
+        }
+}
+
+@media screen and (max-width: 386px){
+        main .text h1{
+                font-size: 2.8rem;
+        }
+        main .text p{
+                margin: 0 auto;
+                width: 100%;
+        }
+}
